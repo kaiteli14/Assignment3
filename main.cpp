@@ -1,6 +1,19 @@
 #include <iostream>
+#include <cstdio>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
+#include <unistd.h>
+#include <string>
+#include <ctime>
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
-    return 0;
+
+using namespace std;
+
+int main(){
+
+
+
+
+ return 0;
 }
