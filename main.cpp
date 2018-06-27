@@ -1,17 +1,9 @@
-#include <iostream>
-#include <cstdio>
-#include <sys/types.h>
-#include <sys/stat.h>
-#include <fcntl.h>
-#include <unistd.h>
-#include <string>
-#include <ctime>
-
-
-using namespace std;
+#include "header.h"
 
 int main(){
 
+    auto disk_name = (char*)"disk0";
+    init_fresh_disk(disk_name, 4096, 31250);
 
 
 
