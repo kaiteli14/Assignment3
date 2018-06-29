@@ -39,7 +39,7 @@ int init_fresh_disk(char* filename, int block_size, int num_blocks)
     srand((unsigned int)(time( nullptr )) );
 
     /*Creates a new file*/
-    fp = fopen (filename, "w+b");
+    fp = fopen (filename, "wb+");
 
     if (fp == nullptr)
     {
