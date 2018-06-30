@@ -1,9 +1,9 @@
-#include "my_api.h"
-#include "my_file_system.h"
-#include "my_disk.h"
-
-int main(){
-
+//#include "my_api.h"
+//#include "my_file_system.h"
+//#include "my_disk.h"
+//
+//int main(){
+//
 //    auto disk_name = (char*)"my_disk";
 ////    Createfs(disk_name, 250000);
 //
@@ -25,17 +25,13 @@ int main(){
 //    output_file.close();
 //
 //    ifstream input_file(disk_name, ios::binary);
-//    FILE_NAME fnt_read[50];
-//    input_file.seekg(sizeof(fnt), ios::beg);
+//    FILE_NAME fnt_read[100];
+//    input_file.seekg(0, ios::beg);
 //    input_file.read((char*)&fnt_read, sizeof(fnt_read));
 //
 //
-//    for(int i = 0; i < 50; i++)
-//    cout << fnt_read[i].i_node << endl;
-
-
-   cout << sizeof(INIT_INFO) << endl;
-
-
- return 0;
-}
+//    for(int i = 0; i < 100; i++)
+//        cout << fnt_read[i].i_node << endl;
+//
+//    return 0;
+//}

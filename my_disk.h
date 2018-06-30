@@ -2,6 +2,7 @@
 #define ASSIGNMENT3_HEADER_H
 
 #include <iostream>
+#include <fstream>
 #include <cstdio>
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -9,6 +10,7 @@
 #include <unistd.h>
 #include <string>
 #include <ctime>
+#include <vector>
 
 using namespace std;
 
@@ -17,6 +19,7 @@ FILE* fp = nullptr;
 double L, p;
 double r;
 int BLOCK_SIZE, MAX_BLOCK, MAX_RETRY, lru;
+int RESERVED_SPACE = 512*1000;
 
 /*---------------------------------------*/
 /*Initializes a disk file filled with 0's*/
@@ -59,7 +62,9 @@ int init_fresh_disk(char* filename, int block_size, int num_blocks)
 }
 
 
+int read_disk(char* disk_name, unsigned int seekg_number, size_t read_size){
 
+}
 
 
 
