@@ -277,19 +277,84 @@ int trashFile(int filenumber){
     return 0;
 }
 
+
+void print_operation_list(){
+    printf("\nOperations: ");
+    printf("\n         c. create a new repository with name"
+           "\n         a. add a file to repository"
+           "\n         d. delete a file"
+           "\n         t. trash a file"
+           "\n         l. list directory "
+           "\n         g. get a copy of the file into your cwd "
+           "\n         e. exit"
+           "\n");
+}
+
 int main(){
-    diskname = "my_repository";
-    createRepository(BLOCK_NUM, "my_repository");
-    formatRepository(diskname);
-    addFile("fig1.png","my_repository");
-    addFile("fig2.png","my_repository");
+    ////TESTING FIELD
+//    diskname = "my_repository";
+//    createRepository(BLOCK_NUM, "my_repository");
+//    formatRepository(diskname);
+//    addFile("fig1.png","my_repository");
+//    addFile("fig2.png","my_repository");
 //    listDirectory(diskname);
 //    getCopy(0,diskname);
 //    getCopy(1, diskname);
 
 //    deleteFile(0);
-    trashFile(0);
-    listDirectory(diskname);
+//    trashFile(0);
+//    listDirectory(diskname);
 
-    return 0;
+while(1) {
+    char s[20];
+    int i = 0;
+    print_operation_list();
+    printf("\nPlease enter operation command: ");
+    int operation = getchar();
+    switch (operation) {
+        case 'c':
+            printf("Type in your new repository name: ");
+            scanf("%s", s);
+            diskname = s;
+            createRepository(BLOCK_NUM, s);
+            formatRepository(s);
+            getchar();
+            break;
+
+        case'l':
+            listDirectory(diskname);
+            getchar();
+            break;
+
+        case 'a':
+           addFile("fig1.png",diskname);
+           addFile("fig2.png",diskname);
+           getchar();
+           break;
+
+        case 'g':
+            getCopy(0,diskname);
+            getCopy(1, diskname);
+            getchar();
+            break;
+
+        case 'd':
+            deleteFile(0);
+            getchar();
+            break;
+
+        case 't':
+            trashFile(0);
+            getchar();
+            break;
+
+        case 'e':
+            exit(0);
+
+        default:
+            printf("Command not valid.\n\n");
+            getchar();
+            break;
+        }
+    }
 }
